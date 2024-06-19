@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 const API_URL = import.meta.env.VITE_API_URL;
@@ -36,15 +36,37 @@ function App() {
         ARE YOU BORED?
       </button>
       <div className="activity__wrapper">
-        <h3>{activity.activity}</h3>
-
-        <p>Availability: {activity.availability}</p>
-        <p>Type: {activity.type}</p>
-        <p>Participants: {activity.participants}</p>
-        <p>Price: {activity.price}</p>
-        <p>Accessibility: {activity.accessibility}</p>
-        <p>Duration: {activity.duration}</p>
-        <p>Kid Friendly: {activity.kidFriendly ? "yes" : "no"}</p>
+        <h3 className="activity__title">{activity.activity}</h3>
+        <div className="activity__data">
+          <p className="activity__desc">
+            <b>Availability: </b>
+            {activity.availability}
+          </p>
+          <p className="activity__desc">
+            <b>Type: </b>
+            {activity.type}
+          </p>
+          <p className="activity__desc">
+            <b>Participants: </b>
+            {activity.participants}
+          </p>
+          <p className="activity__desc">
+            <b>Accessibility: </b>
+            {activity.accessibility}
+          </p>
+          <p className="activity__desc">
+            <b>Duration (hrs/mins/days): </b>
+            {activity.duration}
+          </p>
+          <p className="activity__desc">
+            <b>Kid Friendly: </b>
+            {activity.kidFriendly ? "yes" : "no"}
+          </p>
+          <p className="activity__desc link">
+            <b>Link: </b>
+            <a href={activity.link}>Click for more details</a>
+          </p>
+        </div>
       </div>
     </main>
   );
