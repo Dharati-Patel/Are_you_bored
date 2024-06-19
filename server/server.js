@@ -8,7 +8,7 @@ let { PORT, CROSS_ORIGIN } = process.env;
 
 PORT = PORT || 8081;
 
-app.use(cors({ origin: CROSS_ORIGIN }));
+app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.json());
 
 app.get("/", (_req, res) => {
@@ -18,7 +18,7 @@ app.get("/", (_req, res) => {
 function readActivities() {
   const activityFile = fs.readFileSync("./data/activities.json");
   const activityData = JSON.parse(activityFile);
-  return activityData; 
+  return activityData;
 }
 
 app.get("/activity", (_req, res) => {
@@ -32,7 +32,6 @@ app.get("/activity/random", (_req, res) => {
   const randomActivity = activityData[randomIndex];
   res.json(randomActivity);
 });
-
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
