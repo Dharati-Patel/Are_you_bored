@@ -12,9 +12,11 @@ html {
 }
 
 .activity {
-  margin: 20rem;
+  margin: auto;
+  margin-top: 5rem;
+  height: 100vh;
   text-align: center;
-  width: 50%;
+  //   width: 50%;
   color: white;
   &__wrapper {
     display: flex;
@@ -30,12 +32,16 @@ html {
     font-size: 1.5rem;
     box-shadow: -0.625rem 0.625rem rgb(0, 0, 0, 0.1);
   }
+  &__btn:hover {
+    background-color: rgb(38, 38, 40);
+  }
   &__title {
     margin: 2rem;
     font-size: 2.5rem;
   }
   &__data {
     background-color: rgb(64, 64, 67);
+    border: 0.0625rem solid orange;
     font-size: 1.5rem;
     width: fit-content;
     padding: 2rem;
